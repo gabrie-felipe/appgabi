@@ -13,6 +13,9 @@ import styles from "../config/styles";
 
 export default function UsuarioCadastro() {
   const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [idade, setIdade] = useState("");
+
 
   async function handleRegister() {
     const db = getFirestore(app);
@@ -37,6 +40,18 @@ export default function UsuarioCadastro() {
         mode="outlined"
         value={nome}
         onChangeText={setNome}
+      />
+      <TextInput
+        label="Email"
+        mode="outlined"
+        value={email}
+        onChangeText={setEmail}
+      />
+      <TextInput
+        label="Idade"
+        mode="outlined"
+        value={idade}
+        onChangeText={setIdade}
       />
       <Button mode="contained" onPress={handleRegister}>
         Cadastrar Usuário{" "}
